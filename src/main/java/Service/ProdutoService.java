@@ -4,6 +4,8 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import java.util.List;
+import com.example.Questao1.Fornecedor;
+
 
 public class ProdutoService {
 	
@@ -27,4 +29,13 @@ public class ProdutoService {
 	    session.close();
 	    return produtos;
 	}
+	
+	public List<Fornecedor> buscarFornecedoresPorProduto(Long idProduto) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Query<Fornecedor> query = session.createQuery("SELECT f FROM Produto p JOIN p.fornecedores f WHERE p.id = :idProduto", Fornecedor.class);
+        query.setParameter("idProduto", idProduto);
+        List<Fornecedor> fornecedores = query.getResultList();
+        session.close();
+        return fornecedores;
+    }
 }
