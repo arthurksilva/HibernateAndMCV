@@ -8,7 +8,7 @@ public class Questao1Application {
 
 	public static void main(String[] args) {
 		SpringApplication.run(Questao1Application.class, args);
-		System.out.print("funcionando");
+		System.out.print("Conectado");
 	}
 
 }

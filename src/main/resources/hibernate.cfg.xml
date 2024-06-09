@@ -15,5 +15,7 @@
 
         <mapping class="org.example.Questoa1.Categoria" />
         <mapping class="org.example.Questoa1.Produto" />
+         <mapping class="org.example.Questoa1.Fornecedor" />
+        
     </session-factory>
 </hibernate-configuration>
