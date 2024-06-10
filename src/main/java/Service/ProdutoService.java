@@ -11,12 +11,11 @@ public class ProdutoService {
 	
 	Produto prudutoNovo = new Produto();
 	
-	@SuppressWarnings("deprecation")
 	public void adicionarProduto(Produto produto) {
 	    Session session = HibernateUtil.getSessionFactory().openSession();
 	    Produto produtoLido = session.get(Produto.class, prudutoNovo.getId());
 	    Transaction transaction = session.beginTransaction();
-	    session.save(produtoLido);
+	    session.persist(produtoLido);
 	    transaction.commit();
 	    session.close();
 	}
